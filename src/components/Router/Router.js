@@ -5,6 +5,8 @@ import About from '../Sharedfolder/About/About';
 import Blog from '../Sharedfolder/Blog/Blog';
 import Home from '../Sharedfolder/Home/Home';
 import Main from '../Sharedfolder/Layout/Main';
+import Login from '../Sharedfolder/Login/Login';
+import Signup from '../Sharedfolder/Signup/Signup';
 import FourOfFourRouter from './FourOfFourRouter';
 
 const Router = () => {
@@ -26,12 +28,20 @@ const Router = () => {
                     element: <Home></Home>,
                 },
                 {
-                    path: '/bog',
+                    path: '/blog',
                     element: <Blog></Blog>,
                 },
                 {
                     path: '/about',
                     element: <About></About>,
+                },
+                {
+                    path: '/login',
+                    element: <Login></Login>
+                },
+                {
+                    path: '/signup',
+                    element: <Signup></Signup>
                 },
             ]
         },
