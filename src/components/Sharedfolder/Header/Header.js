@@ -6,11 +6,16 @@ const Header = () => {
     return (
         <div className="navbar bg-primary">
             <div className="flex-1">
+
+                <Link>
+                    <img href='https://www.kindpng.com/picc/m/4-41409_developer-png-png-download-developer-png-no-background.png' alt='logo' />
+
+                </Link>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Programming School</Link>
             </div>
             <div className="flex-3">
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Home</Link>
-                <Link to='/courses' className="btn btn-ghost normal-case text-xl">Courses</Link>
+                <Link to='/programmingCourse' className="btn btn-ghost normal-case text-xl">Courses</Link>
                 <Link to='/faq' className="btn btn-ghost normal-case text-xl">FAQ</Link>
                 <Link to='/blog' className="btn btn-ghost normal-case text-xl">Blog</Link>
                 <Link to='/about' className="btn btn-ghost normal-case text-xl">About</Link>

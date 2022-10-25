@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SliderCarosel = () => {
     return (
@@ -10,7 +11,7 @@ const SliderCarosel = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Link to=''><button className="btn btn-outline btn-info w-40">Go Now</button> </Link>
                         </div>
                     </div>
                 </div>
@@ -26,7 +27,7 @@ const SliderCarosel = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Link to=''><button className="btn btn-outline btn-info w-40">Go Now</button> </Link>
                         </div>
                     </div>
                 </div>
@@ -42,7 +43,7 @@ const SliderCarosel = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Link to=''><button className="btn btn-outline btn-info w-40">Go Now</button> </Link>
                         </div>
                     </div>
                 </div>
@@ -58,7 +59,7 @@ const SliderCarosel = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Link to=''><button className="btn btn-outline btn-info w-40">Go Now</button> </Link>
                         </div>
                     </div>
                 </div>
