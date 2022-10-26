@@ -20,19 +20,19 @@ const Router = () => {
                 {
                     path: '/',
                     element: <Home></Home>,
-                    loader: () => fetch('http://localhost:5000/courses')
+                    loader: () => fetch('https://courses-server-eight.vercel.app/courses')
                 },
 
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
-                    loader: async () => fetch(`http://localhost:5000/courses`)
+                    loader: async () => fetch(`https://courses-server-eight.vercel.app/courses`)
                 },
 
                 {
                     path: '/courses/:id',
                     element: <ProgrammingCourses></ProgrammingCourses>,
-                    loader: async ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                    loader: async ({ params }) => fetch(`https://courses-server-eight.vercel.app/courses/${params.id}`)
                 },
                 {
                     path: '/faq',
