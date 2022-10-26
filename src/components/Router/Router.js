@@ -1,8 +1,10 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Courses from '../Courses/Courses';
 import ProgrammingCourses from '../Courses/Programming/ProgrammingCourses';
 import About from '../Sharedfolder/About/About';
 import Blog from '../Sharedfolder/Blog/Blog';
+import FAQ from '../Sharedfolder/FAQ/FAQ';
 import Home from '../Sharedfolder/Home/Home';
 import Main from '../Sharedfolder/Layout/Main';
 import Login from '../Sharedfolder/Login/Login';
@@ -18,14 +20,22 @@ const Router = () => {
                 {
                     path: '/',
                     element: <Home></Home>,
+                    loader: () => fetch('http://localhost:5000/courses')
                 },
                 {
-                    path: '/programmingCourse',
-                    element: <ProgrammingCourses></ProgrammingCourses>
+                    path: '/courses',
+                    element: <Courses></Courses>,
+                    loader: async () => fetch(`http://localhost:5000/courses`)
+                },
+
+                {
+                    path: '/courses/:id',
+                    element: <ProgrammingCourses></ProgrammingCourses>,
+                    loader: async ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
                 },
                 {
                     path: '/faq',
-                    element: <Home></Home>,
+                    element: <FAQ></FAQ>
                 },
                 {
                     path: '/blog',

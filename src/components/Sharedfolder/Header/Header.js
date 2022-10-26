@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/UserContext';
 
 const Header = () => {
-    const [user, email] = useState('')
+    const { user } = useContext(AuthContext)
     return (
         <div className="navbar bg-primary">
-            <div className="flex-1">
+            <div className="flex-col">
 
                 <Link>
-                    <img href='https://www.kindpng.com/picc/m/4-41409_developer-png-png-download-developer-png-no-background.png' alt='logo' />
+                    <img className='rounded-full w-12 h-12' src=' https://www.kindpng.com/picc/m/4-41409_developer-png-png-download-developer-png-no-background.png' alt='logo' />
 
                 </Link>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Programming School</Link>
+                <Link to='/' className="btn btn-ghost normal-case "><span className='text-xl uppercase text-warning font-extrabold'>Programming School</span></Link>
             </div>
             <div className="flex-3">
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Home</Link>
-                <Link to='/programmingCourse' className="btn btn-ghost normal-case text-xl">Courses</Link>
-                <Link to='/faq' className="btn btn-ghost normal-case text-xl">FAQ</Link>
-                <Link to='/blog' className="btn btn-ghost normal-case text-xl">Blog</Link>
-                <Link to='/about' className="btn btn-ghost normal-case text-xl">About</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Home</Link>
+                <Link to='/programmingCourse' className="btn btn-ghost normal-case text-xl hover:text-warning">Courses</Link>
+                <Link to='/faq' className="btn btn-ghost normal-case text-xl hover:text-warning">FAQ</Link>
+                <Link to='/blog' className="btn btn-ghost normal-case text-xl hover:text-warning">Blog</Link>
+                <Link to='/about' className="btn btn-ghost normal-case text-xl hover:text-warning">About</Link>
 
-                <Link to='/login' className="btn btn-ghost normal-case text-xl">Log in</Link>
+                <Link to='/login' className="btn btn-ghost normal-case text-xl hover:text-warning">Log in</Link>
 
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Log out</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Log out</Link>
 
-                <Link to='/signup' className="btn btn-ghost normal-case text-xl">Sign Up</Link>
+                <Link to='/signup' className="btn btn-ghost normal-case text-xl hover:text-warning">Sign Up</Link>
             </div >
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
