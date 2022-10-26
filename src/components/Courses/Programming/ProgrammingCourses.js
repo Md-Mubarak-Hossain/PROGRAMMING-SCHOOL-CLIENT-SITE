@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { useLoaderData } from 'react-router-dom';
-
+import Pdf from "react-to-pdf";
+const ref = createRef();
 const ProgrammingCourses = () => {
     const course = useLoaderData();
     console.log(course);
@@ -18,13 +19,21 @@ const ProgrammingCourses = () => {
                 </div>
                 <div className="card w-full bg-base-100 shadow-xl mx-auto">
                     <figure><img src={image} alt={name} className='h-64' /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">
-                            {title}
-                            <div className="badge badge-secondary">NEW</div>
-                        </h2>
-                        <p>{description}</p>
-                        <button className="badge badge-outline">Download </button>
+                    <div className="card-body ">
+
+                        <div className='w-11/12 mx-auto text-justify' ref={ref}>
+                            <h2 className="card-title">
+                                {title}
+                                <div className="badge badge-secondary">NEW</div>
+                            </h2>
+                            <p>{description}</p>
+                        </div>
+
+                        {/* React to pdf downloader  */}
+                        <Pdf targetRef={ref} filename={`${title}.pdf`}>
+                            {({ toPdf }) => <button className='badge badge-outline' onClick={toPdf}>Download Pdf</button>}
+                        </Pdf>
+
                         <div className="card-actions justify-end w-full">
                             {
                                 <div className='flex mx-auto'>
