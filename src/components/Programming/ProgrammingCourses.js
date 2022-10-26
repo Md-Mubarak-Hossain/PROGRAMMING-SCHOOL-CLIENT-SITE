@@ -27,12 +27,12 @@ const ProgrammingCourses = () => {
                                 <div className="badge badge-secondary">NEW</div>
                             </h2>
                             <p>{description}</p>
+                            {/* React to pdf downloader  */}
+                            <Pdf targetRef={ref} filename={`${title}.pdf`}>
+                                {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}>Download Pdf</button>}
+                            </Pdf>
                         </div>
 
-                        {/* React to pdf downloader  */}
-                        <Pdf targetRef={ref} filename={`${title}.pdf`}>
-                            {({ toPdf }) => <button className='badge badge-outline' onClick={toPdf}>Download Pdf</button>}
-                        </Pdf>
 
                         <div className="card-actions justify-end w-full">
                             {
@@ -86,7 +86,7 @@ const ProgrammingCourses = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </div >
     );
 };

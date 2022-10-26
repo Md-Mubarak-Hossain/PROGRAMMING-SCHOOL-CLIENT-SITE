@@ -28,7 +28,7 @@ const Header = () => {
             </div>
             <div className="flex-3">
                 <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Home</Link>
-                <Link to='/programmingCourse' className="btn btn-ghost normal-case text-xl hover:text-warning">Courses</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Courses</Link>
                 <Link to='/faq' className="btn btn-ghost normal-case text-xl hover:text-warning">FAQ</Link>
                 <Link to='/blog' className="btn btn-ghost normal-case text-xl hover:text-warning">Blog</Link>
                 <Link to='/about' className="btn btn-ghost normal-case text-xl hover:text-warning">About</Link>

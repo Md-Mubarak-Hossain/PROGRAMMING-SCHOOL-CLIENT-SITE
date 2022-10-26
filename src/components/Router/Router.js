@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Courses from '../Courses/Courses';
-import ProgrammingCourses from '../Courses/Programming/ProgrammingCourses';
+import ProgrammingCourses from '../Programming/ProgrammingCourses';
 import About from '../Sharedfolder/About/About';
 import Blog from '../Sharedfolder/Blog/Blog';
 import FAQ from '../Sharedfolder/FAQ/FAQ';
@@ -9,7 +9,6 @@ import Home from '../Sharedfolder/Home/Home';
 import Main from '../Sharedfolder/Layout/Main';
 import Login from '../Sharedfolder/Login/Login';
 import Signup from '../Sharedfolder/Signup/Signup';
-import SliderCarosel from '../Sharedfolder/SliderCarosel/SliderCarosel';
 import FourOfFourRouter from './FourOfFourRouter';
 
 const Router = () => {
@@ -23,11 +22,7 @@ const Router = () => {
                     element: <Home></Home>,
                     loader: () => fetch('http://localhost:5000/courses')
                 },
-                {
-                    path: '/slider',
-                    element: <SliderCarosel></SliderCarosel>,
-                    loader: () => fetch('http://localhost:5000/slider')
-                },
+
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
@@ -68,7 +63,6 @@ const Router = () => {
     ])
     return (
         <RouterProvider router={router}>
-
         </RouterProvider >
     );
 };

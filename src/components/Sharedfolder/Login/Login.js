@@ -20,13 +20,16 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col ">
-
                 <h1 className="text-4xl font-extrabold text-primary uppercase">Please Login now!</h1>
-
-                <form onSubmit={handleSubmit} className="card flex w-full max-w-sm shadow-2xl ">
+                <form onSubmit={handleSubmit} className="card flex w-full max-w-sm shadow-2xl">
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -45,12 +48,13 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
+                            <h1><small>Haven't account?</small><Link to='/signup'><button className='btn btn-active btn-link'>Sign Up</button></Link></h1>
                         </div>
                     </div>
 
                 </form>
             </div>
-        </div>
+        </div >
     );
 };
 
