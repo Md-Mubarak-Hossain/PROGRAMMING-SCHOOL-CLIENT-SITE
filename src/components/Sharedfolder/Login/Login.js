@@ -8,7 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.from?.state?.pathname || '/';
-    const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, gitSignIn } = useContext(AuthContext);
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
     const handleSubmit = event => {
@@ -33,6 +33,15 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
+                setError('')
+            })
+            .catch(error => console.error(error))
+    }
+    const gitHubSignIn = () => {
+        gitSignIn()
+            .then(result => {
+                const user = result.user;
+                setError('')
             })
             .catch(error => console.error(error))
     }
@@ -66,7 +75,7 @@ const Login = () => {
                             <hr />
 
                             <button onClick={googeLogin} className="btn btn-outline text-primary w-full py-0 px-5 mt-2"><FcGoogle></FcGoogle> <small className='text-sm lowercase px-2'>Google Sign In</small></button>
-                            <button className="btn btn-outline text-primary w-full py-0 px-5 mt-2"><FaGithub></FaGithub> <small className='text-sm lowercase px-2'>Sign in with Github</small></button>
+                            <button onClick={gitHubSignIn} className="btn btn-outline text-primary w-full py-0 px-5 mt-2"><FaGithub></FaGithub> <small className='text-sm lowercase px-2'>Sign in with Github</small></button>
                         </div>
                     </div>
                 </form>
