@@ -34,7 +34,7 @@ const Router = () => {
 
                 {
                     path: '/courses/:id',
-                    element: <ProgrammingCourses></ProgrammingCourses>,
+                    element: <PrivateRouter><ProgrammingCourses></ProgrammingCourses></PrivateRouter>,
                     loader: async ({ params }) => fetch(`https://courses-server-eight.vercel.app/courses/${params.id}`)
                 },
                 {
