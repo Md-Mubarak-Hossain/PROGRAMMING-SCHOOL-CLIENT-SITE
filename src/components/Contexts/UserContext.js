@@ -11,9 +11,9 @@ const UserContext = ({ children }) => {
     /*.............................
     create user signup form
     ..............................*/
-    const createUser = (email, password) => {
+    const createUser = (email, password, name) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password, name);
 
     }
     /*.............................
@@ -25,10 +25,10 @@ const UserContext = ({ children }) => {
     /*.............................
          goolge sign in form
          ...........................*/
-    const googleProvider = new GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
     const signInWithGoogle = () => {
         setLoading(true);
-        return signInWithPopup(auth, googleProvider);
+        return signInWithPopup(auth, provider);
     }
 
 
@@ -49,7 +49,6 @@ const UserContext = ({ children }) => {
         return () => {
             unsubscribe();
         }
-
     }, []);
     const authInfo = { user, loading, createUser, signIn, logOut, signInWithGoogle }
     return (

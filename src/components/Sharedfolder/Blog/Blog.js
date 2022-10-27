@@ -1,6 +1,8 @@
 import React from 'react';
 import { createRef } from 'react';
 import Pdf from "react-to-pdf";
+import { FcDownload } from 'react-icons/fc';
+
 const ref = createRef();
 
 const Blog = () => {
@@ -17,7 +19,7 @@ const Blog = () => {
                     For security reasons, browsers restrict cross-origin HTTP requests initiated from scripts. For example, XMLHttpRequest and the Fetch API follow the same-origin policy. This means that a web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins includes the right CORS headers
                 </p>
                 <Pdf targetRef={ref} filename='cors.pdf'>
-                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}>Download Pdf</button>}
+                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}><FcDownload></FcDownload>Download Pdf</button>}
                 </Pdf>
             </div>
             <div className='mx-auto w-11/12 m-5 border border-primary p-4 rounded ' ref={ref}>
@@ -48,7 +50,7 @@ const Blog = () => {
                     </li>
                 </p>
                 <Pdf targetRef={ref} filename='firebase.pdf'>
-                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}>Download Pdf</button>}
+                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}><FcDownload></FcDownload>Download Pdf</button>}
                 </Pdf>
             </div >
             <div className='mx-auto w-11/12 m-5 border border-primary p-4 rounded ' ref={ref}>
@@ -58,7 +60,7 @@ const Blog = () => {
                     The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated (Logged in).
                 </p>
                 <Pdf targetRef={ref} filename='router.pdf'>
-                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}>Download Pdf</button>}
+                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}><FcDownload></FcDownload>Download Pdf</button>}
                 </Pdf>
             </div >
             <div className='mx-auto w-11/12 m-5 border border-primary p-4 rounded ' ref={ref}>
@@ -100,7 +102,7 @@ const Blog = () => {
 
                 <p className="p-4 text-semibold   bg-base-200 my-2 rounded text-xl text-justify">Thread pool: Though node.js is single-threaded it internally maintains a thread pool. When non-blocking requests are accepted there are processed in an event loop, but while accepting blocking requests it checks for available threads in a thread pool, assigns a thread to the client’s request which is then processed and send back to the event loop, and response is sent to the respective client.</p>
                 <Pdf targetRef={ref} filename='node.pdf'>
-                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}>Download Pdf</button>}
+                    {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}><FcDownload></FcDownload>Download Pdf</button>}
                 </Pdf>
             </div >
         </div >

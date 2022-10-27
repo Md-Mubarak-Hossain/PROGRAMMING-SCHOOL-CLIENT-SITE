@@ -4,12 +4,15 @@ import Courses from '../Courses/Courses';
 import ProgrammingCourses from '../Programming/ProgrammingCourses';
 import About from '../Sharedfolder/About/About';
 import Blog from '../Sharedfolder/Blog/Blog';
+import Checkout from '../Sharedfolder/Checkout/Checkout';
 import FAQ from '../Sharedfolder/FAQ/FAQ';
 import Home from '../Sharedfolder/Home/Home';
 import Main from '../Sharedfolder/Layout/Main';
 import Login from '../Sharedfolder/Login/Login';
+import Profile from '../Sharedfolder/Profile/Profile';
 import Signup from '../Sharedfolder/Signup/Signup';
 import FourOfFourRouter from './FourOfFourRouter';
+import PrivateRouter from './PrivateRouter';
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -25,7 +28,7 @@ const Router = () => {
 
                 {
                     path: '/courses',
-                    element: <Courses></Courses>,
+                    element: <PrivateRouter> <Courses></Courses></PrivateRouter>,
                     loader: async () => fetch(`https://courses-server-eight.vercel.app/courses`)
                 },
 
@@ -53,6 +56,15 @@ const Router = () => {
                 {
                     path: '/signup',
                     element: <Signup></Signup>
+                },
+                {
+                    path: '/profile',
+                    element: <PrivateRouter><Profile></Profile></PrivateRouter>
+                },
+
+                {
+                    path: '/checkout',
+                    element: <PrivateRouter><Checkout></Checkout></PrivateRouter>
                 },
             ]
         },

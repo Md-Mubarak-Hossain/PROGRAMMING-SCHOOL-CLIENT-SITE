@@ -1,27 +1,31 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
-
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 const Signup = () => {
     const navigate = useNavigate();
-    const { createUser } = useContext(AuthContext);
+    const { createUser, signInWithGoogle } = useContext(AuthContext);
+    // console.log(createUser);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const photoURL = form.photoURL.value;
+        // const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        createUser(email, password)
+        createUser(email, password, name)
             .then(result => {
                 const user = result.user;
+                console.log(user, 'signup')
                 form.reset();
-                navigate('/')
+                navigate('/login')
             })
             .catch(error => console.error(error))
     }
+
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen" >
             <div className="hero-content flex-col">
                 <h1 className="text-4xl font-extrabold text-primary uppercase">Please Sign up now!</h1>
                 <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
@@ -53,8 +57,8 @@ const Signup = () => {
                                 <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sign Up</button>
+                        <div className="form-control mt-6 ">
+                            <button className="btn btn-primary mb-2">Sign Up</button>
                             <h1><small>Already have an account?</small><Link to='/login'><button className='btn btn-active btn-link'>Log In</button></Link></h1>
                         </div>
                     </div>
