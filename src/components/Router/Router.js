@@ -23,19 +23,19 @@ const Router = () => {
                 {
                     path: '/',
                     element: <Home></Home>,
-                    loader: () => fetch('https://courses-server-eight.vercel.app/courses')
+                    loader: () => fetch('https://programming-school-gold.vercel.app/courses')
                 },
 
                 {
                     path: '/courses',
                     element: <PrivateRouter> <Courses></Courses></PrivateRouter>,
-                    loader: async () => fetch(`https://courses-server-eight.vercel.app/courses`)
+                    loader: async () => fetch(`https://programming-school-gold.vercel.app/courses`)
                 },
 
                 {
                     path: '/courses/:id',
                     element: <PrivateRouter><ProgrammingCourses></ProgrammingCourses></PrivateRouter>,
-                    loader: async ({ params }) => fetch(`https://courses-server-eight.vercel.app/courses/${params.id}`)
+                    loader: async ({ params }) => fetch(`https://programming-school-gold.vercel.app/courses/${params.id}`)
                 },
                 {
                     path: '/faq',
