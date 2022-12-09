@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+
 const Signup = () => {
     const navigate = useNavigate();
-    const { createUser, signInWithGoogle } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     // console.log(createUser);
     const handleSubmit = event => {
         event.preventDefault();

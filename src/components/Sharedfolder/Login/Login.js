@@ -2,13 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+
 
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.from?.state?.pathname || '/';
-    const { signIn, signInWithGoogle, gitSignIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
     const handleSubmit = event => {
@@ -19,6 +19,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                console.log(user)
                 form.reset();
                 setSuccess('Successfully login!!!')
                 navigate(from, { replace: true })
@@ -33,20 +34,13 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
+                console.log(user)
                 setError('')
                 navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
     }
-    const gitHubSignIn = () => {
-        gitSignIn()
-            .then(result => {
-                const user = result.user;
-                setError('')
-                navigate(from, { replace: true })
-            })
-            .catch(error => console.error(error))
-    }
+
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col ">
@@ -77,7 +71,6 @@ const Login = () => {
                             <hr />
 
                             <button onClick={googeLogin} className="btn btn-outline text-primary w-full py-0 px-5 mt-2"><FcGoogle></FcGoogle> <small className='text-sm lowercase px-2'>Google Sign In</small></button>
-                            <button onClick={gitHubSignIn} className="btn btn-outline text-primary w-full py-0 px-5 mt-2"><FaGithub></FaGithub> <small className='text-sm lowercase px-2'>Sign in with Github</small></button>
                         </div>
                     </div>
                 </form>
